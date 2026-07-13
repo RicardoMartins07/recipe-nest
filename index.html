@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RecipeNest</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/sass/main.scss" />
+    <script defer type="module" src="src/js/controller.js"></script>
+  </head>
+
+  <body>
+    <div class="app">
+      <header class="header">
+        <a href="#" class="brand">
+          <img
+            class="brand__logo"
+            src="src/img/logo.png"
+            alt="RecipeNest logo"
+          />
+        </a>
+
+        <nav class="nav">
+          <div class="bookmarks">
+            <button class="nav__btn btn-bookmarks" type="button">
+              <i data-lucide="bookmark"></i>
+              <span>Bookmarks</span>
+            </button>
+
+            <div class="bookmarks__dropdown"></div>
+          </div>
+
+          <button
+            class="nav__btn nav__btn--primary btn-add-recipe"
+            type="button"
+          >
+            <i data-lucide="plus"></i>
+            <span>Add recipe</span>
+          </button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="search-area">
+          <span class="eyebrow">Recipe finder</span>
+          <h1>Search your next meal</h1>
+
+          <form class="search">
+            <input
+              class="search__input"
+              type="search"
+              placeholder="Search pasta, pizza, chicken..."
+            />
+            <button class="search__btn" type="submit" disabled>Search</button>
+          </form>
+
+          <div class="search-suggestions">
+            <span>Popular:</span>
+            <button type="button" data-query="Meatballs" class="btn-suggestion">
+              Meatballs
+            </button>
+            <button type="button" data-query="Lasagna" class="btn-suggestion">
+              Lasagna
+            </button>
+            <button type="button" data-query="Seafood" class="btn-suggestion">
+              Seafood
+            </button>
+            <button
+              type="button"
+              data-query="Cheesecake"
+              class="btn-suggestion"
+            >
+              Cheesecake
+            </button>
+          </div>
+        </section>
+
+        <section class="section-head section-head--results hidden">
+          <div>
+            <span class="eyebrow">Trending</span>
+            <h2>Popular recipes</h2>
+          </div>
+        </section>
+
+        <section class="recipes recipes--trending">
+          <article
+            class="recipe-card recipe-card--large"
+            data-query="Margherita Pizza"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"
+              alt="Margherita Pizza"
+            />
+            <div class="recipe-card__body">
+              <span>Italian Kitchen</span>
+              <h3>Margherita Pizza</h3>
+            </div>
+          </article>
+
+          <article class="recipe-card" data-query="Creamy Pasta">
+            <img
+              src="https://images.unsplash.com/photo-1528712306091-ed0763094c98"
+              alt="Creamy Pasta"
+            />
+            <div class="recipe-card__body">
+              <span>Home Table</span>
+              <h3>Creamy Pasta</h3>
+            </div>
+          </article>
+
+          <article class="recipe-card" data-query="Classic Burger">
+            <img
+              src="https://images.unsplash.com/photo-1550547660-d9450f859349"
+              alt="Classic Burger"
+            />
+            <div class="recipe-card__body">
+              <span>Food Studio</span>
+              <h3>Classic Burger</h3>
+            </div>
+          </article>
+        </section>
+
+        <section class="section-head">
+          <div>
+            <span class="eyebrow">Results</span>
+            <h2>Search results</h2>
+          </div>
+
+          <div class="pagination"></div>
+        </section>
+
+        <section class="recipes recipes--results hidden">
+          <article class="recipe-card">
+            <img
+              src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"
+              alt="Pizza"
+            />
+            <div class="recipe-card__body">
+              <span>Italian Kitchen</span>
+              <h3>Margherita Pizza</h3>
+              <p>45 min · 4 servings</p>
+            </div>
+          </article>
+
+          <article class="recipe-card">
+            <img
+              src="https://images.unsplash.com/photo-1528712306091-ed0763094c98"
+              alt="Pasta"
+            />
+            <div class="recipe-card__body">
+              <span>Home Table</span>
+              <h3>Creamy Pasta</h3>
+              <p>25 min · 3 servings</p>
+            </div>
+          </article>
+
+          <article class="recipe-card">
+            <img
+              src="https://images.unsplash.com/photo-1550547660-d9450f859349"
+              alt="Burger"
+            />
+            <div class="recipe-card__body">
+              <span>Food Studio</span>
+              <h3>Classic Burger</h3>
+              <p>30 min · 2 servings</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="recipe-details hidden">
+          <div class="recipe-details__media">
+            <img
+              src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"
+              alt="Selected recipe"
+            />
+          </div>
+
+          <div class="recipe-details__content">
+            <span class="eyebrow">Selected recipe</span>
+
+            <div class="recipe-details__header">
+              <h2>Margherita Pizza</h2>
+
+              <button
+                class="bookmark-btn"
+                type="button"
+                aria-label="Add to bookmarks"
+              >
+                <i data-lucide="bookmark"></i>
+              </button>
+            </div>
+
+            <div class="recipe-meta">
+              <div>
+                <span>Cooking time</span>
+                <strong>45 min</strong>
+              </div>
+              <div>
+                <span>Servings</span>
+                <strong>4 people</strong>
+              </div>
+              <div>
+                <span>Publisher</span>
+                <strong>Italian Kitchen</strong>
+              </div>
+            </div>
+
+            <section class="ingredients">
+              <h3>Ingredients</h3>
+
+              <ul>
+                <li>400g pizza dough</li>
+                <li>200g tomato sauce</li>
+                <li>150g mozzarella</li>
+                <li>Fresh basil</li>
+                <li>Olive oil</li>
+                <li>Salt</li>
+              </ul>
+            </section>
+
+            <a class="source-link" href="#" target="_blank">
+              Open full directions
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal hidden">
+      <div class="overlay"></div>
+
+      <form class="recipe-form">
+        <button class="modal__close" type="button">×</button>
+
+        <span class="eyebrow">New recipe</span>
+        <h2>Add your recipe</h2>
+
+        <div class="form-grid">
+          <label>
+            Title
+            <input type="text" name="title" placeholder="Recipe title" />
+          </label>
+
+          <label>
+            Source URL
+            <input type="url" name="sourceUrl" placeholder="https://..." />
+          </label>
+
+          <label>
+            Image URL
+            <input type="url" name="image" placeholder="https://..." />
+          </label>
+
+          <label>
+            Publisher
+            <input type="text" name="publisher" placeholder="Your name" />
+          </label>
+
+          <label>
+            Cooking time
+            <input type="number" name="cookingTime" placeholder="45" />
+          </label>
+
+          <label>
+            Servings
+            <input type="number" name="servings" placeholder="4" />
+          </label>
+        </div>
+
+        <label class="ingredients-field">
+          Ingredients
+
+          <textarea
+            name="ingredients"
+            placeholder="One ingredient per line&#10;500,g,Flour&#10;2,,Eggs&#10;1,tsp,Salt"
+            required
+          ></textarea>
+
+          <small>
+            Format: Quantity, Unit, Description. Use one ingredient per line.
+          </small>
+        </label>
+        <br />
+        <button class="submit-btn" type="submit">Upload recipe</button>
+      </form>
+    </div>
+  </body>
+</html>

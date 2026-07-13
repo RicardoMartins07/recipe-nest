@@ -1,0 +1,51 @@
+.header {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  &__logo {
+    height: 58px;
+    width: auto;
+
+    display: block;
+
+    transition: transform 0.25s ease;
+  }
+
+  &:hover .brand__logo {
+    transform: scale(1.03);
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 12px 18px;
+    background: var(--surface);
+    color: var(--text);
+    font-weight: 800;
+
+    &--primary {
+      border-color: var(--text);
+      background: var(--text);
+      color: var(--surface);
+    }
+  }
+}
