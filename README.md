@@ -21,7 +21,7 @@ This project was developed as an evolution of the Forkify application from Jonas
 
 ## Live Demo
 
-👉
+👉 https://recipe-nest-lswl.vercel.app/
 
 ---
 
